@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Library {
 
@@ -74,5 +76,14 @@ public class Library {
         return users.get(userId).bookReturn(isbn);
     }
 
+    //view list of available books
+    public ArrayList<Book> availableBooks() {
+        Set<Integer> keys = books.keySet();
+        ArrayList<Book> availablebooks = new ArrayList<>();
+        for (int key : keys) {
+           if(books.get(key).isAvailable){ availablebooks.add(books.get(key));}
+        }
+        return availablebooks;
+    }
 
 }
