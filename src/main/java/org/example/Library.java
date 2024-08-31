@@ -8,6 +8,8 @@ public class Library {
 
     public HashMap<Integer, Book> books = new HashMap<>(); // stores book of library , with isbn as key
 
+    public HashMap<String, User> users = new HashMap<>(); // stores users of library , with userid as key
+
     public Library(String librarianName) {
         librarian = new Librarian(librarianName); // librarian is allocated during creation of Library class's object.
     }
@@ -27,6 +29,7 @@ public class Library {
         return "name = " + librarian.getLibrarianName() + ", librarian id = " + librarian.getLibrarianId();
     }
 
+    //add books in library
     public String addBook(String title, String author, int publicationYear, String password) {
         if (!password.equals(librarian.getLibrarianPassword())) {
             return "wrong password entered";
@@ -43,5 +46,15 @@ public class Library {
         Book book = new Book(title, author, publicationYear);
         books.put(book.getIsbn(), book);
         return "book added";
+    }
+
+    // register user in library
+    public String addUser(String name) {
+        if (name == null || name.equals("")) {
+            return "Invalid name";
+        }
+        User user = new User(name);
+        users.put(user.getUserId(), user);
+        return "User added";
     }
 }
