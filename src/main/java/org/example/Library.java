@@ -1,7 +1,12 @@
 package org.example;
 
+import java.util.HashMap;
+
 public class Library {
+
     public Librarian librarian; // every library have multiple books and multiple user and one librarian
+
+    public HashMap<Integer, Book> books = new HashMap<>(); // stores book of library , with isbn as key
 
     public Library(String librarianName) {
         librarian = new Librarian(librarianName); // librarian is allocated during creation of Library class's object.
@@ -20,5 +25,23 @@ public class Library {
     // get details of librarian
     public String getLibrarianDetail() {
         return "name = " + librarian.getLibrarianName() + ", librarian id = " + librarian.getLibrarianId();
+    }
+
+    public String addBook(String title, String author, int publicationYear, String password) {
+        if (!password.equals(librarian.getLibrarianPassword())) {
+            return "wrong password entered";
+        }
+        if (author == null || author.equals("")) {
+            return "wrong auther";
+        }
+        if (title == null || title.equals("")) {
+            return "wrong title";
+        }
+        if (!(publicationYear >= 0 && publicationYear <= 2024)) {
+            return "wrong publicationyear";
+        }
+        Book book = new Book(title, author, publicationYear);
+        books.put(book.getIsbn(), book);
+        return "book added";
     }
 }
