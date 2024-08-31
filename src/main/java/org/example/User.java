@@ -29,4 +29,15 @@ public class User {
     public String getUserDetails() {
         return "User's name = " + getUserName() + ", user's Id = " + getUserId();
     }
+
+    // borrow book to user
+    public String bookBorrow(Book book) {
+        if (!book.isAvailable) {
+            return "Book is not available";
+        }
+        book.isAvailable = false;
+        books.put(book.getIsbn(), book);
+        book.borrower = this;
+        return "Book is borrowed";
+    }
 }

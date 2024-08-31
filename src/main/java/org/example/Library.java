@@ -57,4 +57,14 @@ public class Library {
         users.put(user.getUserId(), user);
         return "User added";
     }
+
+    //Borrow book
+    public String bookBorrow(int isbn, String userId) {
+        if (!books.containsKey(isbn)) {
+            return "book is not exists";
+        }
+        return users.get(userId).bookBorrow(books.get(isbn));
+    }
+
+
 }
