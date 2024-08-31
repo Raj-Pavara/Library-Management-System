@@ -40,4 +40,15 @@ public class User {
         book.borrower = this;
         return "Book is borrowed";
     }
+
+    // return book from user
+    public String bookReturn(int isbn) {
+        if (!books.containsKey(isbn)) {
+            return "This user does not have this book";
+        }
+        books.get(isbn).isAvailable = true;
+        books.get(isbn).borrower = null;
+        books.remove(isbn);
+        return "Book is returned";
+    }
 }

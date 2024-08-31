@@ -66,5 +66,13 @@ public class Library {
         return users.get(userId).bookBorrow(books.get(isbn));
     }
 
+    //Return book
+    public String bookReturn(int isbn, String userId) {
+        if (!books.containsKey(isbn)) {
+            return "book is not exists";
+        }
+        return users.get(userId).bookReturn(isbn);
+    }
+
 
 }

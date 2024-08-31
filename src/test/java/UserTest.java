@@ -57,6 +57,39 @@ public class UserTest {
         Assertions.assertEquals("Book is borrowed",library.bookBorrow(keyBookList.get(1),keyUserList.get(0)));
     }
 
+    @Test
+    @DisplayName("should give warning if user try to return book which is not exists in library")
+    void testWarningOfNotExistsBookReturn(){
+        Library library = new Library("raj pavara");
+        addTestUsersAndBooks(library);
+        ArrayList<String> keyUserList = getUserKeys(library);
+        ArrayList<Integer> keyBookList = getBookKeys(library);
+        Assertions.assertEquals("book is not exists",library.bookReturn(keyBookList.get(0)+5,keyUserList.get(1)));
+    }
+
+    @Test
+    @DisplayName("should give warning if user does not have particular book and try to return it")
+    void testWarningOfReturnNotHaveBook(){
+        Library library = new Library("raj pavara");
+        addTestUsersAndBooks(library);
+        ArrayList<String> keyUserList = getUserKeys(library);
+        ArrayList<Integer> keyBookList = getBookKeys(library);
+        library.bookBorrow(keyBookList.get(0),keyUserList.get(0));
+        library.bookBorrow(keyBookList.get(1),keyUserList.get(1));
+        Assertions.assertEquals("This user does not have this book",library.bookReturn(keyBookList.get(0),keyUserList.get(1))); // try to return wrong book
+    }
+
+    @Test
+    @DisplayName("should Return book if user have that book")
+    void testReturnBook(){
+        Library library = new Library("raj pavara");
+        addTestUsersAndBooks(library);
+        ArrayList<String> keyUserList = getUserKeys(library);
+        ArrayList<Integer> keyBookList = getBookKeys(library);
+        library.bookBorrow(keyBookList.get(0),keyUserList.get(0));
+        library.bookBorrow(keyBookList.get(1),keyUserList.get(1));
+        Assertions.assertEquals("Book is returned",library.bookReturn(keyBookList.get(0),keyUserList.get(0)));
+    }
 
     //add test user's and book
     void addTestUsersAndBooks(Library library){
