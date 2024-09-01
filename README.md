@@ -8,7 +8,7 @@ welcome to Library Management System, a simple library management system that al
 
 Create a simple library management system that allows users to perform basic operations such as adding books, borrowing books, returning books, and viewing available books.
 
-For a detailed problem statement and requirements, [click here](https://github.com/Raj-Pavara/Library-Management-System/tree/master/Problem Statement).
+For a detailed problem statement and requirements, [click here](https://github.com/Raj-Pavara/Library-Management-System/tree/master/Problem%20Statment).
 
 ## Development Tools
 
@@ -196,6 +196,7 @@ We appreciate your feedback! If you have any suggestions or find any issues, ple
 1. **Clone the repository:**
    ```bash
   git clone https://github.com/Raj-Pavara/Library-Management-System.git
+  ```
 
 2. **Open the Project in IntelliJ IDEA:**
   Open the cloned project in IntelliJ IDEA.
@@ -209,16 +210,16 @@ We appreciate your feedback! If you have any suggestions or find any issues, ple
 
 The Book test coverage of this project is **84%**.
 
-![Book Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/tree/master/Screenshots/Book Test.png) 
+![Book Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/blob/master/Screenshots/Book%20Test.png) 
 
 ### Librarian Test
 
 The Librarian test coverage of this project is **100%**.
 
-![Librarian Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/tree/master/Screenshots/Librarian Test.png) 
+![Librarian Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/blob/master/Screenshots/Librarian%20Test.png) 
 
 ### User Test
 
 The User test coverage of this project is **57%**.
 
-![User Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/tree/master/Screenshots/User Test.png) 
+![User Test Coverage Screenshot](https://github.com/Raj-Pavara/Library-Management-System/blob/master/Screenshots/User%20Test.png) 
