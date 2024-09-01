@@ -177,7 +177,7 @@ These test classes help maintain the integrity of the Library Management System 
 
 1. **One Librarian:** one library have only one librarian.
 2. **Password Authentication:** for changing password of librarian you need to enter old password of librarian.
-3. **Add Book Authority:**librarian only have authority of adding book in library, and librarian need to enter his password before adding book in library.
+3. **Add Book Authority:** librarian only have authority of adding book in library, and librarian need to enter his password before adding book in library.
 
 ## Feedback
 
